@@ -1,0 +1,11 @@
+@keyframes effect {
+  0% {
+    color: rgb(0, 0, 0);
+  }
+  50% {
+    color: rgb(0, 0, 255);
+  }
+  100% {
+    color: rgb(255, 255, 255);
+  }
+}
