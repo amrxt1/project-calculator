@@ -36,4 +36,21 @@ body {
 
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.button {
+  border: 1px solid black;
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
