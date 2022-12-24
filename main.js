@@ -34,3 +34,17 @@ function operate(a, operator, b) {
       return;
   }
 }
+
+let secondaryScreen = document.querySelector(".screenSecondary");
+let primaryScreen = document.querySelector(".screenPrimary");
+
+let prevOperand = "";
+let currentOperand = "";
+let operator = "";
+
+const numberBtns = document.querySelectorAll(".num");
+numberBtns.forEach((btn) => btn.addEventListener("click", transferVal));
+function transferVal(e) {
+  currentOperand += this.textContent;
+  primaryScreen.textContent = currentOperand;
+}
