@@ -1,3 +1,15 @@
+@keyframes effect {
+  0% {
+    border-color: rgb(0, 0, 0);
+  }
+  50% {
+    border-color: rgb(0, 0, 255);
+  }
+  100% {
+    border-color: rgb(255, 255, 255);
+  }
+}
+
 body {
   font-family: "Courier New", Courier, monospace;
   background-color: rgb(193, 207, 236);
@@ -5,9 +17,8 @@ body {
 
 .header {
   text-align: center;
-  font-size: 28px;
+  font-size: 20px;
   padding: 10px;
-  animation: effect 2s alternate infinite;
 }
 .main-wrap {
   display: flex;
@@ -19,16 +30,22 @@ body {
 
   width: 350px;
   height: 566px;
-  background-color: gray;
+  background-color: rgb(219, 217, 217);
   padding: 20px;
   gap: 10px;
+
+  border: 2px solid black;
+  animation: effect 2s alternate infinite;
+  border-radius: 17px;
 }
 
 .top {
   flex: 0.8;
 
   display: flex;
-  background-color: black;
+  background-color: rgb(151, 159, 174);
+
+  border-radius: 10px;
 }
 
 .buttons {
@@ -53,4 +70,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  border: 1px solid black;
+  border-radius: 10px;
+  animation: effect 2s alternate infinite;
 }
