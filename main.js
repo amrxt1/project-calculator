@@ -63,4 +63,16 @@ function transferVal(e) {
 }
 
 const operatorBtns = document.querySelectorAll(".operator");
-console.log(operatorBtns);
+operatorBtns.forEach((btn) => btn.addEventListener("click", calculate));
+function calculate(e) {
+  if (prevOperand && !currentOperand) {
+    operator = this.textContent;
+    secondaryScreen.textContent = prevOperand + " " + operator;
+    return;
+  }
+  prevOperand = currentOperand;
+  operator = this.textContent;
+  secondaryScreen.textContent = prevOperand + " " + operator;
+  currentOperand = "";
+  primaryScreen.textContent = "";
+}
