@@ -42,9 +42,25 @@ let prevOperand = "";
 let currentOperand = "";
 let operator = "";
 
+const ac = document.querySelector(".ac");
+ac.addEventListener("click", () => {
+  currentOperand = "";
+  primaryScreen.textContent = currentOperand;
+});
+
+const del = document.querySelector(".del");
+del.addEventListener("click", () => {
+  currentOperand = currentOperand.slice(0, currentOperand.length - 1);
+  primaryScreen.textContent = currentOperand;
+});
+const equal = document.querySelector(".equal");
+
 const numberBtns = document.querySelectorAll(".num");
 numberBtns.forEach((btn) => btn.addEventListener("click", transferVal));
 function transferVal(e) {
   currentOperand += this.textContent;
   primaryScreen.textContent = currentOperand;
 }
+
+const operatorBtns = document.querySelectorAll(".operator");
+console.log(operatorBtns);
