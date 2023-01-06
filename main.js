@@ -87,9 +87,45 @@ function calculate(e) {
 
 const equalBtn = document.querySelector(".equal");
 equalBtn.addEventListener("click", equal);
-
 function equal(e) {
+  if (!prevOperand) {
+    operator = "";
+    secondaryScreen.textContent = currentOperand;
+    prevOperand = currentOperand;
+    currentOperand = "";
+    primaryScreen.textContent = "";
+    return;
+  }
+  if (!operator) {
+    displayError();
+    return;
+  }
+  if (operator === "/") {
+    if (currentOperand === "0") {
+      displayError();
+      return;
+    }
+  }
+  if (!currentOperand) {
+    displayError();
+    return;
+  }
   var x = operate(Number(prevOperand), operator, Number(currentOperand));
+  x = Math.round(x * 1000) / 1000;
   secondaryScreen.textContent = x;
   prevOperand = x;
+  primaryScreen.textContent = "";
 }
+
+function displayError() {
+  primaryScreen.textContent = "INVALID Syntax";
+}
+
+const dot = document.querySelector(".dot");
+dot.addEventListener("click", () => {
+  if (currentOperand.indexOf(".") > 0) {
+    return;
+  }
+  currentOperand = currentOperand.concat(".");
+  primaryScreen.textContent = currentOperand;
+});
